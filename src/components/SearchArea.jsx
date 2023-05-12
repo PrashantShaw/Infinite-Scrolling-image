@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 function SearchArea({ handleQueryChange }) {
   const inputRef = useRef(null)
@@ -16,10 +16,17 @@ function SearchArea({ handleQueryChange }) {
     }
     handleQueryChange(value)
   }
+  useEffect(() => {
+    
+  }, [])
+  
   return (
     <div className='search-area'>
       <input type="text" placeholder='Search Images here' ref={inputRef} />
       <button className='search-btn' onClick={handleSearchOnClick}>Search</button>
+      <div className="prev-queries">
+
+      </div>
     </div>
   )
 }

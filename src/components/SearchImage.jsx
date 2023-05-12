@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useRef } from "react";
 import { ViewImgStyle, headSectionStyle } from "../constants/constants";
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -28,7 +28,7 @@ function FlickrPhotos() {
     let error = query ? queryImgsError : defaultImgsError
 
     // Infinite scroll handler
-    const handleLastItemInterception = useCallback((node) => {
+    const handleLastItemInterception = (node) => {
         // console.log('!!!!!!', defaultImgsLoading)
         if (loading) return;
         console.log("node +++", node);
@@ -42,7 +42,7 @@ function FlickrPhotos() {
             }
         });
         if (node) observer.current.observe(node);
-    });
+    };
 
     if (error) return <h2>Some error occured: {typeof error === 'object' && error.message}</h2>
 
