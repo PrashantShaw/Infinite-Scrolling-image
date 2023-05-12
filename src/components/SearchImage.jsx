@@ -29,9 +29,7 @@ function FlickrPhotos() {
 
     // Infinite scroll handler
     const handleLastItemInterception = (node) => {
-        // console.log('!!!!!!', defaultImgsLoading)
         if (loading) return;
-        console.log("node +++", node);
         if (observer.current) observer.current.disconnect();
         observer.current = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
@@ -58,7 +56,6 @@ function FlickrPhotos() {
                 style={{ paddingTop: '200px', display: 'flex', justifyContent: ' center', flexWrap: 'wrap', gap: '20px' }}>
                 {photos.map((photo, idx) => {
                     if (photos.length - 1 === idx) {
-                        console.log("intercepted", photos.length - 1, idx);
                         return (
                             <img
                                 ref={handleLastItemInterception}

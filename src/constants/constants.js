@@ -1,6 +1,7 @@
 export const API_KEY = "fad484ed0bb2f65657e528abaf80decf";
 export const API_URL = `https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=${API_KEY}&format=json&nojsoncallback=1&per_page=20`;
 export const SEARCH_API_URL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&format=json&nojsoncallback=1&per_page=20`;
+export const OLD_QUERIES_KEY = 'prevQueries'
 export const imgStyle = {
     width: '100%',
     maxWidth: '300px',

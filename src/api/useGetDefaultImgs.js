@@ -13,7 +13,6 @@ function useGetDefaultImgs() {
             .then((response) => response.json())
             .then((data) => {
                 setLoading(false);
-                // console.log('#########################', data)
                 setData((prev) => [...prev, ...data.photos.photo]);
             }).catch(err => {
                 settError(err)
